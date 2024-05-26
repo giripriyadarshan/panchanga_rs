@@ -41,7 +41,8 @@ impl Panchanga {
             "Dwadashi",
             "Thrayodashi",
             "Chaturdashi",
-            "Poornima/Amavasya",
+            "Poornima",
+            "Amavasya",
         ];
 
         let karan_list = [
@@ -130,8 +131,15 @@ impl Panchanga {
         let tslon = slon;
         let n: usize = ((tmlon - tslon) / 12_f64) as usize;
 
-        //TODO: Rewrite it to match poornima and amavasya logic
-        let tithi = tithi_list[n].to_string();
+        let tithi = if n < 14 {
+            tithi_list[n].to_string()
+        } else if n == 14 {
+            tithi_list[14].to_string()
+        } else if n > 14 && n < 29 {
+            tithi_list[n - 15].to_string()
+        } else {
+            tithi_list[15].to_string()
+        };
         let paksha = if n <= 14 {
             "Shukla".to_string()
         } else {
