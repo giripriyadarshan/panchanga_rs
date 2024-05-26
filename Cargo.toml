@@ -2,6 +2,15 @@
 name = "panchanga"
 version = "0.1.0"
 edition = "2021"
+authors = ["Priyadarshan Giri <giripriyadarshan@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/giripriyadarshan/panchanga_rs"
+homepage = "https://github.com/giripriyadarshan/panchanga_rs"
+description = "Rust library based on santhoshn/panchanga"
+keywords = ["panchanga", "library", "hindu", "calendar"]
+categories = ["date-and-time"]
+exclude = ["target/**", ".gitignore", ".github/**", "LICENSE", ".idea/**"]
 
 [dependencies]
 libm = "0.2.8"
